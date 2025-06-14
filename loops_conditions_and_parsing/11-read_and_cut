@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Read /etc/passwd line by line
+# Read /etc/passwd line 
 while IFS=: read -r username password uid gid gecos home shell
 do
     # Display username, uid, and home directory
@@ -9,3 +9,4 @@ do
     echo "-----------------------"
 done < /etc/passwd
 
+~                     

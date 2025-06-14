@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#gug
+for file in *; do
+  # Tire içeriyorsa sadece ilk tireden sonrasını al
+  if [[ "$file" == *-* ]]; then
+    echo "${file#*-}"
+  else
+    echo "$file"
+  fi
+done
+

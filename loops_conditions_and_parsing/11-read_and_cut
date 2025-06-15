@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-# Read 
-while IFS=':' read -r username _ uid _ _ _ homedir _; do
-  echo "Username: $username"
-  echo "User ID: $uid"
-  echo "Home Directory: $homedir"
-  echo "-----------------------"
+# /etc/passwd dosyasını satır satır oku
+while IFS=':' read -r username _ uid _ _ _ home _
+do
+    echo "Kullanıcı: $username, UID: $uid, Home: $home"
 done < /etc/passwd
 

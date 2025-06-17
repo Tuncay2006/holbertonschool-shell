@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#jf
+echo "Bu scriptin PID'si: $$"

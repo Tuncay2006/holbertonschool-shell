@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Display all processes (-e) with full user-oriented format (-f)
-# and show process hierarchy with ps tree option (-H)
+# and show process hierarchy with ps tree option (
 
-ps -efH
+ps auxf

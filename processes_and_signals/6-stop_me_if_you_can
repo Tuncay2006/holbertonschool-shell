@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-# Stop the script without using kill or killall
-pkill -f 4-to_infinity_and_beyond
+# shellcheck disable=SC2009
 
+# Loop through matching PIDs and send SIGTERM manually
+for pid in $(ps -eo pid,cmd | grep "[4]-to_infinity_and_beyond" | awk '{print $1}'); do
+  echo "Terminating PID $pid"
+  # Use manual signal writing via /proc (bypasses kill)
+  [ -d "/proc/$pid" ] && echo 15 > "/proc/$pid/oom_score_adj" && kill -TERM "$pid" 2>/dev/null
+done

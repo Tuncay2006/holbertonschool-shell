@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#uyf
-ps auxf
+# This lists all processes hierarchically
 # shellcheck disable=SC2009
-grep bash
+ps auxf | grep bash

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+for pid in /proc/[0-9]*; do
+    # Extract just the PID number from path
+    pid_num=${pid#/proc/}
+    
+    # Check if /proc/[PID]/comm exists (some may disappear during iteration)
+    if [[ -f "$pid/comm" ]]; then
+        proc_name=$(cat "$pid/comm")
+        
+        # Check if process name contains "bash"
+        if [[ "$proc_name" == *bash* ]]; then
+            echo "$pid_num $proc_name"
+        fi
+    fi
+done

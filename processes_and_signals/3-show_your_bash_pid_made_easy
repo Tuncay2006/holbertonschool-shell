@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#jh
 for pid in /proc/[0-9]*; do
     # Extract just the PID number from path
     pid_num=${pid#/proc/}
